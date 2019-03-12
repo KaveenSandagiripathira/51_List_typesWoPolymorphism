@@ -69,6 +69,21 @@ public class List_inArraySlots {
                        , double doubleValue
                        , String stringValue
                        ) {
+		if( filledElements == intElements.length) expand();
+		if (type == 0){
+			intElements[ filledElements] = intValue;
+			typeOfElements[filledElements] = 0;
+		}
+		else if (type == 1){
+			doubleElements[filledElements] = doubleValue;
+			typeOfElements[filledElements] = 1;
+		}
+		else{
+			stringElements[filledElements] = stringValue;
+			typeOfElements[filledElements] = 2;
+		}
+		filledElements++;
+		return true;
      }
 
 
@@ -76,13 +91,26 @@ public class List_inArraySlots {
       Double the capacity of the List_inArraySlots,
       preserving existing data.
      */
-     // private void expand() {
-        // System.out.println( "expand... (for debugging)");
-           // /* S.O.P. rules for debugging:
-              // Working methods should be silent. But during
-              // development, the programmer must verify that
-              // this method is called when that is appropriate.
-              // So test using the println(), then comment it out.
-              // */
-     // }
+     private void expand() {
+		int[] intBigger = new int[ intElements.length * 2];
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            intBigger[ elemIndex] = intElements[ elemIndex];
+        intElements = intBigger;
+		
+		double[] doubleBigger = new double[ doubleElements.length * 2];
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            doubleBigger[ elemIndex] = doubleElements[ elemIndex];
+        doubleElements = doubleBigger;
+
+		String[] stringBigger = new String[ stringElements.length * 2];
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            stringBigger[ elemIndex] = stringElements[ elemIndex];
+        stringElements = stringBigger;
+		
+		int[] typeBigger = new int[ typeOfElements.length * 2];
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            typeBigger[ elemIndex] = typeOfElements[ elemIndex];
+        typeOfElements = typeBigger;
+        
+     }
 }
