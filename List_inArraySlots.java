@@ -96,24 +96,18 @@ public class List_inArraySlots {
      */
      private void expand() {
 		int[] intBigger = new int[ intElements.length * 2];
-        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
-            intBigger[ elemIndex] = intElements[ elemIndex];
-        intElements = intBigger;
-		
 		double[] doubleBigger = new double[ doubleElements.length * 2];
-        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
-            doubleBigger[ elemIndex] = doubleElements[ elemIndex];
-        doubleElements = doubleBigger;
-
 		String[] stringBigger = new String[ stringElements.length * 2];
-        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
-            stringBigger[ elemIndex] = stringElements[ elemIndex];
-        stringElements = stringBigger;
-		
 		int[] typeBigger = new int[ typeOfElements.length * 2];
-        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
-            typeBigger[ elemIndex] = typeOfElements[ elemIndex];
-        typeOfElements = typeBigger;
-        
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++){
+            intBigger[ elemIndex] = intElements[ elemIndex];
+			doubleBigger[ elemIndex] = doubleElements[ elemIndex];
+			stringBigger[ elemIndex] = stringElements[ elemIndex];
+			typeBigger[ elemIndex] = typeOfElements[ elemIndex];
+		}
+        intElements = intBigger;
+		doubleElements = doubleBigger;
+		stringElements = stringBigger;
+		typeOfElements = typeBigger;
      }
 }
