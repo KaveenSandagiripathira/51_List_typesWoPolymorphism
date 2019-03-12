@@ -21,6 +21,9 @@ public class List_inArraySlots {
     private int[] typeOfElements;
 
     private static final int INITIAL_CAPACITY = 10;
+	private static final int INT_NUM = 0;
+	private static final int DOUBLE_NUM = 1;
+	private static final int STRING_NUM = 2;
 
     /**
       Construct an empty list with a small initial capacity.
@@ -48,11 +51,11 @@ public class List_inArraySlots {
     public String toString() {
 		String output = "[";
 		for (int pos = 0; pos < filledElements; pos++){
-			if (typeOfElements[pos] == 0)
+			if (typeOfElements[pos] == INT_NUM)
 				output += intElements[pos] + ", ";
-			else if (typeOfElements[pos] == 1)
+			else if (typeOfElements[pos] == DOUBLE_NUM)
 				output += doubleElements[pos] + ", ";
-			else
+			else if (typeOfElements[pos] == STRING_NUM)
 				output += stringElements[pos] + ", ";
 		}
 		return output += "]";
@@ -70,17 +73,17 @@ public class List_inArraySlots {
                        , String stringValue
                        ) {
 		if( filledElements == intElements.length) expand();
-		if (type == 0){
+		if (type == INT_NUM){
 			intElements[ filledElements] = intValue;
-			typeOfElements[filledElements] = 0;
+			typeOfElements[filledElements] = INT_NUM;
 		}
-		else if (type == 1){
+		else if (type == DOUBLE_NUM){
 			doubleElements[filledElements] = doubleValue;
-			typeOfElements[filledElements] = 1;
+			typeOfElements[filledElements] = DOUBLE_NUM;
 		}
-		else{
+		else if (type == STRING_NUM){
 			stringElements[filledElements] = stringValue;
-			typeOfElements[filledElements] = 2;
+			typeOfElements[filledElements] = STRING_NUM;
 		}
 		filledElements++;
 		return true;
