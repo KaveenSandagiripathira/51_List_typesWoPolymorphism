@@ -26,22 +26,37 @@ public class List_inArraySlots {
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
+		intElements = new int[INITIAL_CAPACITY];
+		doubleElements = new double[INITIAL_CAPACITY];
+		stringElements = new String[INITIAL_CAPACITY];
+		typeOfElements = new int[INITIAL_CAPACITY];
     }
 
 
     /**
       @return the number of elements in this list
      */
-    // public int size() {
-    // }
+    public int size() {
+		return filledElements;
+    }
 
 
      /**
        @return a string representation of this list,
        in [a,b,c,] format
       */
-    // public String toString() {
-    // }
+    public String toString() {
+		String output = "[";
+		for (int pos = 0; pos < filledElements; pos++){
+			if (typeOfElements[pos] == 0)
+				output += intElements[pos] + ", ";
+			else if (typeOfElements[pos] == 1)
+				output += doubleElements[pos] + ", ";
+			else
+				output += stringElements[pos] + ", ";
+		}
+		return output += "]";
+    }
 
 
     /**
@@ -49,12 +64,12 @@ public class List_inArraySlots {
 
       @return true, in keeping with conventions yet to be discussed
      */
-     // public boolean add( int type   // same meaning as in typeOfElements
-                       // , int    intValue
-                       // , double doubleValue
-                       // , String stringValue
-                       // ) {
-     // }
+     public boolean add( int type   // same meaning as in typeOfElements
+                       , int    intValue
+                       , double doubleValue
+                       , String stringValue
+                       ) {
+     }
 
 
     /**
