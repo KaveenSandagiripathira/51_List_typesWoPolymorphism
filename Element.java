@@ -1,3 +1,4 @@
+
 public class Element {
 	private int    intElement;
     private double doubleElement;
@@ -15,5 +16,5 @@ public class Element {
 		type = elementTypes[pos];	
 	}
 	
-	
+
 }
