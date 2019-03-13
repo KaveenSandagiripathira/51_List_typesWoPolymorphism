@@ -99,6 +99,7 @@ public class List_inArraySlots {
 		double[] doubleBigger = new double[ doubleElements.length * 2];
 		String[] stringBigger = new String[ stringElements.length * 2];
 		int[] typeBigger = new int[ typeOfElements.length * 2];
+		
         for( int elemIndex = 0; elemIndex < filledElements; elemIndex++){
             intBigger[ elemIndex] = intElements[ elemIndex];
 			doubleBigger[ elemIndex] = doubleElements[ elemIndex];
@@ -110,4 +111,22 @@ public class List_inArraySlots {
 		stringElements = stringBigger;
 		typeOfElements = typeBigger;
      }
+	 
+	 
+	 /**
+      accessor
+      @return element @index from this list
+      precondition: @index is within the bounds of the array.
+          (Having warned the user about this precondition,
+           you should NOT complicate your code to check
+           whether user violated the condition.)
+     */
+    public Element get( int index ) {
+		Element value = new Element(index, intElements, 
+										doubleElements, 
+										stringElements, 
+										typeOfElements);
+		
+		return value;
+    }
 }

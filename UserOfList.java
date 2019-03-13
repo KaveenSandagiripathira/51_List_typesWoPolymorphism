@@ -34,5 +34,17 @@ public class UserOfList {
         System.out.println("result of expanded list: "
              + list.size() + " elements:");
         System.out.println( list + System.lineSeparator());
+		
+		
+		
+		/** Test the new "get" method (code from ~\List_inArraySlots\UserOfList\ )  **/
+		 // test accessor
+        // System.out.println( "sample elements from list:");
+		System.out.println(list.get(2));
+        // for( elemIndex = 1; elemIndex < list.size(); elemIndex *= 2 ) {
+            // System.out.println( "element " + elemIndex + ": "
+                              // + list.get( elemIndex)
+                              // );
+        // }
     }
 }
