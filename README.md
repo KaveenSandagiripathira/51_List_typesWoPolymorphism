@@ -9,23 +9,17 @@ might be programmed without the benefits of polymorphism.
 ## List_inArraySlots Class
 #### Fields:
 ```
-private int[]    intElements; // array containing int elements of the list
-private double[] doubleElements; // array containing double elements of the list
-private String[] stringElements; // array containing String elements of the list
-private int filledElements;  // the number of elements in this list
+private int filledElements; // the number of elements in this list
 
-private int[] typeOfElements; // array containing the respective types of elements in the list
+private Element[] list; // array containing elements of different types 
 
-private static final int INITIAL_CAPACITY = 10; // initial capacity for all arrays (or the list)
-private static final int INT_NUM = 0; // "magic number" for int types 
-private static final int DOUBLE_NUM = 1; // "magic number" for double types 
-private static final int STRING_NUM = 2; // "magic number" for String types 
+private static final int INITIAL_CAPACITY = 10; // initial capacity of the list
 ```
 
 #### Constructor(s):
 ```
 /** Constructor that: 
-      -initiates all arrays to have a size of INITIAL_CAPACITY */
+      -initiates Element array to have a size of INITIAL_CAPACITY */
 public List_inArraySlots ()
 ```
 
@@ -43,9 +37,13 @@ public boolean add (int value, int intValue, double doubleValue, String stringVa
 // Doubles the capacity of all arrays (or the list), preserving existing data
 private void expand()
 
+// Returns element at a specific index from this list
+public Element get (int index)
+
 ```
 
 ## UserOfList class:
 - Creates an instance of List_inArraySlots
 - Incrementally adds elements to the list using list.add()
+- tests methods in List_inArraySlots
 
