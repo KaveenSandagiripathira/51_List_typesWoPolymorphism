@@ -1,3 +1,5 @@
+// code from Amy and Kyle's solution in studentWorkWithHolmes
+
 public class Element{
     // ================================================================
     // FIELDS

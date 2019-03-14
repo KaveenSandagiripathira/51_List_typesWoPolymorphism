@@ -1,3 +1,5 @@
+// code from Amy and Kyle's solution
+
 /**
   Implement a list of diverse types, including
   integers, double-precision floating point numbers,
@@ -79,7 +81,7 @@ public class List_inArraySlots {
 
         return true;
      }
-
+	
     public Element get(int index){
         return list[index];
     }
